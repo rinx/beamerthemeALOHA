@@ -156,8 +156,13 @@
     \vspace{-.5cm}
     \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{date}
       \usebeamerfont{date}\insertdate
-    \end{beamercolorbox}\vskip0.5em}
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \end{beamercolorbox}}
+    \ifx\inserttitlegraphic\empty\else
+    \vskip-5em
+    \begin{beamercolorbox}[sep=8pt,right,wd=.95\paperwidth,colsep=0bp]{titlegraphic}
+        \inserttitlegraphic\par
+    \end{beamercolorbox}
+    \fi
   \endgroup
   \vfill
 }
