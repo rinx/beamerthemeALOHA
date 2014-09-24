@@ -74,10 +74,10 @@
 
 \section{Introduction}
 
-\subsection{Introduction}
+\subsection{Itemize}
 
 \begin{frame}
-    \frametitle{\insertsubsectionnumber. \insertsubsectionhead}
+    \frametitle{\insertsectionnumber.\insertsubsectionnumber. \insertsubsectionhead}
 
     \begin{itemize}
         \item[\Large \wingdrarrow] \large In this slide...
@@ -95,23 +95,65 @@
     \end{itemize}
 \end{frame}
 
+\subsection{Blocks}
+
 \begin{frame}
-    \frametitle{\insertsubsectionnumber. \insertsubsectionhead}
+    \frametitle{\insertsectionnumber.\insertsubsectionnumber. \insertsubsectionhead}
+
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \begin{block}{Normal Block}
+                This is a normal block.
+            \end{block}
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \begin{alertblock}{Alert Block}
+                This is an alert block.
+            \end{alertblock}
+            \begin{exampleblock}{Example Block}
+                This is an example block.
+            \end{exampleblock}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\section{Second Section}
+
+\subsection{Colors}
+
+\begin{frame}
+    \frametitle{\insertsectionnumber.\insertsubsectionnumber. \insertsubsectionhead}
+    \begin{itemize}
+        \item[\wingdsqflr] \textcolor{ALHGreen}{ALHGreen}
+        \item[\wingdsqflr] \textcolor{ALHPink}{ALHPink}
+        \item[\wingdsqflr] \textcolor{ALHBlue}{ALHBlue}
+        \item[\wingdsqflr] \textcolor{ALHWhite}{ALHWhite}
+        \item[\wingdsqflr] \textcolor{ALHGray}{ALHGray}
+        \item[\wingdsqflr] \textcolor{ALHYellow}{ALHYellow}
+    \end{itemize}
+
+\end{frame}
+
+\subsection{Test}
+
+\begin{frame}
+    \frametitle{\insertsectionnumber.\insertsubsectionnumber. \insertsubsectionhead}
 
 \end{frame}
 
 % appendix
 
-\mode<beamer|trans>{
-    \appendix
-    \section{\appendixname}
-
-    \begin{frame}[noframenumbering]
-        \frametitle{\insertsectionhead \  | {\large \insertsubsectionhead}}
-
-    \end{frame}
-
-}
+% \mode<beamer|trans>{
+%     \appendix
+%     \section{\appendixname}
+%
+%     \begin{frame}[noframenumbering]
+%         \frametitle{\insertsectionhead \  | {\large \insertsubsectionhead}}
+%
+%     \end{frame}
+%
+% }
 
 \end{document}
 

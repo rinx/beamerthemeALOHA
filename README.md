@@ -1,6 +1,8 @@
 beamerthemeALOHA.sty
 ===
 
+![slide-example](slide_example.jpg)
+
 This is a beamer theme based on the color scheme [ALOHA][ALOHA].
 
 This project is forked from [https://gist.github.com/rinx/782fd36c0378731dbe9f](https://gist.github.com/rinx/782fd36c0378731dbe9f).
