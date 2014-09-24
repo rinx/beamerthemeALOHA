@@ -1,0 +1,194 @@
+\mode<presentation>
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\makeatletter
+\def\progressbar@progressbar{} % the progress bar
+\newcount\progressbar@tmpcounta% auxiliary counter
+\newcount\progressbar@tmpcountb% auxiliary counter
+\newdimen\progressbar@pbht %progressbar height
+\newdimen\progressbar@pbwd %progressbar width
+\newdimen\progressbar@tmpdim % auxiliary dimension
+
+\progressbar@pbwd=\paperwidth
+\progressbar@pbht=0.4ex
+
+%\usecolortheme{whale}
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+  
+\setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+\setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+%\usecolortheme{orchid}
+\setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+
+
+%\useinnertheme{rounded}
+\setbeamertemplate{blocks}[rounded][shadow=\beamer@themerounded@shadow]
+\setbeamertemplate{items}[ball]
+\setbeamertemplate{sections/subsections in toc}[ball]
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themerounded@shadow]
+\setbeamertemplate{part page}[default][colsep=-4bp,rounded=true,shadow=\beamer@themerounded@shadow]
+
+%\useoutertheme{infolines}
+% \setbeamercolor*{author in head/foot}{parent=palette tertiary}
+% \setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{author in head/foot}{parent=palette secondary}
+\setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{date in head/foot}{parent=palette secondary}
+
+\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+\setbeamercolor*{subsection in head/foot}{parent=palette primary}
+
+% the progress bar
+\definecolor{pbblue}{RGB}{109, 160, 189}% filling color for the progress bar
+\definecolor{pbgray}{RGB}{200, 200, 200}% background color for the progress bar
+
+\def\progressbar@progressbar{%
+
+    \progressbar@tmpcounta=\insertframenumber
+    \progressbar@tmpcountb=\inserttotalframenumber
+    \progressbar@tmpdim=\progressbar@pbwd
+    \multiply\progressbar@tmpdim by \progressbar@tmpcounta
+    \divide\progressbar@tmpdim by \progressbar@tmpcountb
+
+  \begin{tikzpicture}[very thin]
+
+    \draw[fill=pbgray, draw=none]
+      (0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
+
+      \draw[fill=pbblue, draw=none] %
+        (0pt, 0pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
+
+%     \draw[color=normal text.fg!50]  
+%       (0pt, 0pt) rectangle (\progressbar@pbwd, \progressbar@pbht) 
+%         node[pos=0.5,color=normal text.fg] {\textnormal{%
+%              \pgfmathparse{\insertframenumber*100/\inserttotalframenumber}%
+%              \pgfmathprintnumber[fixed,precision=2]{\pgfmathresult}\,\%%
+%         }%
+%     };
+  \end{tikzpicture}%
+}
+
+\defbeamertemplate*{footline}{infolines theme}
+{
+  \leavevmode%
+  \hbox{%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%     \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\insertshorttitle
+%   \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+    \usebeamerfont{title in head/foot}\hspace*{2em}
+    \ifx\insertsectionhead\empty\else
+    \insertsectionnumber.\insertsectionhead
+    \fi
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1ex,center,dp=0ex]{white}%
+    \progressbar@progressbar%
+  \end{beamercolorbox}%
+  \vskip0pt%
+}
+
+% \defbeamertemplate*{headline}{infolines theme}
+% {
+%   \leavevmode%
+%   \hbox{%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
+%     \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
+%   \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
+%     \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+%   \end{beamercolorbox}}%
+%   \vskip0pt%
+% }
+
+\defbeamertemplate*{title page}{title aloha}
+{
+  \vbox{}
+  \vfill
+  \begingroup
+  \hspace{-.6cm}
+    \begin{beamercolorbox}[sep=16pt,rounded=true,left,wd=.95\paperwidth,colsep=0bp]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip1em%
+        \hrule height 0.1mm depth 0.1mm width .9\textwidth
+        \vskip1em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    {\centering
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \vspace{-.5cm}
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \vspace{-.5cm}
+    \begin{beamercolorbox}[sep=8pt,left,wd=.95\paperwidth,colsep=0bp]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
+}
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+% ---
+
+
+\definecolor{ALHPink}{RGB}{212, 97, 132}
+\definecolor{ALHBlue}{RGB}{139, 190, 219}
+\definecolor{ALHWhite}{RGB}{218, 234, 241}
+\definecolor{ALHGreen}{RGB}{167, 201, 97}
+\definecolor{ALHYellow}{RGB}{232, 244, 203}
+\definecolor{ALHGray}{RGB}{70, 70, 70}
+\setbeamercolor{normal text}{fg=ALHGray, bg=white}
+\setbeamercolor{structure}{fg=ALHGreen}
+\setbeamercolor{alerted text}{fg=ALHPink}
+\setbeamercolor{example text}{fg=ALHBlue}
+
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{itemize items}{$\bullet$}
+\setbeamertemplate{background canvas}[vertical shading][bottom=ALHYellow!25,top=white] 
+
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{caption}[numbered]
+\renewcommand{\figurename}{Fig.}
+
+\setbeamertemplate{section in toc}[sections numbered]
+
+\mode
+<all>
+

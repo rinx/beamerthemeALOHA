@@ -1,0 +1,117 @@
+\documentclass[ignorenonframetext,14pt]{beamer}
+\usetheme{ALOHA}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \else
+    \usepackage[utf8]{inputenc}
+  \fi
+\fi
+
+% \AtBeginSection{
+%  \let\insertsectionnumber\relax
+%  \let\sectionname\relax
+%  \frame{\sectionpage}
+% }
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+\usepackage{luatexja}
+\hypersetup{unicode=true}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{luatexja-fontspec}
+
+\usepackage{txfonts}
+\usefonttheme{professionalfonts}
+
+%\setmainfont[Ligatures=TeX]{Helvetica Neue UltraLight}
+%\setsansfont[Ligatures=TeX]{Helvetica Neue UltraLight}
+\setmainfont[Ligatures=TeX,BoldFont=Helvetica Neue Bold,ItalicFont=Helvetica Neue UltraLight Italic]{Helvetica Neue Thin}
+\setsansfont[Ligatures=TeX,BoldFont=Helvetica Neue Bold,ItalicFont=Helvetica Neue UltraLight Italic]{Helvetica Neue Thin}
+\setmainjfont[BoldFont=Kozuka Gothic Pro M,ItalicFont=Helvetica Neue Thin Italic]{Kozuka Gothic Pro L}
+\setsansjfont{Kozuka Gothic Pro M}
+
+\def\HelvNeueUL{\fontspec{Helvetica Neue UltraLight}}
+\def\HelvNeueT{\fontspec{Helvetica Neue Thin}}
+\def\HelvNeueR{\fontspec{Helvetica Neue}}
+\def\HelvNeueB{\fontspec{Helvetica Neue Bold}}
+\def\kozgoM{\fontspec{Kozuka Gothic Pro M}}
+\def\kozgoR{\fontspec{Kozuka Gothic Pro R}}
+\def\kozgoL{\fontspec{Kozuka Gothic Pro L}}
+\def\kozgoEL{\fontspec{Kozuka Gothic Pro EL}}
+
+%definition of wingding marks
+\def\wingdsqr{{\fontspec{Wingdings Regular} p}}
+\def\wingdsqflr{{\fontspec{Wingdings Regular} v}}
+\def\wingdrarrow{{\fontspec{Wingdings 3} g}}
+\def\wingdrbarrow{{\fontspec{Wingdings 3} m}}
+
+\def\vector#1{\mbox{\boldmath $#1$}}
+
+\title[]{\HelvNeueB Test slide}
+\subtitle{\HelvNeueB test slide for beamerthemeALOHA.sty}
+\author[]{\HelvNeueT Rintaro Okamura}
+\institute[]{}
+\date[]{\HelvNeueT September 2014}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+    \thispagestyle{empty}
+\end{frame}
+
+\section{Introduction}
+
+\subsection{Introduction}
+
+\begin{frame}
+    \frametitle{\insertsubsectionnumber. \insertsubsectionhead}
+
+    \begin{itemize}
+        \item[\Large \wingdrarrow] \large In this slide...
+            \begin{itemize}
+                \normalsize
+                \item[\wingdsqr] A
+                \begin{itemize}
+                    \normalsize
+                    \item[\wingdsqflr] \textcolor{ALHPink}{B}
+                    \item[\wingdsqflr] \textcolor{ALHBlue}{C}
+                    \item[\wingdsqflr] D
+                    \item[\wingdsqflr] E
+                \end{itemize}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\insertsubsectionnumber. \insertsubsectionhead}
+
+\end{frame}
+
+% appendix
+
+\mode<beamer|trans>{
+    \appendix
+    \section{\appendixname}
+
+    \begin{frame}[noframenumbering]
+        \frametitle{\insertsectionhead \  | {\large \insertsubsectionhead}}
+
+    \end{frame}
+
+}
+
+\end{document}
+
