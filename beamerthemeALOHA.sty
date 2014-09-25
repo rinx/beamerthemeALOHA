@@ -98,7 +98,7 @@
 %   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
 %     \usebeamerfont{title in head/foot}\insertshorttitle
 %   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+  \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
     \usebeamerfont{title in head/foot}\hspace*{2em}
     \ifx\insertsectionhead\empty\else
     \insertsectionnumber.\insertsectionhead
@@ -188,6 +188,9 @@
 \setbeamertemplate{background canvas}[vertical shading][bottom=ALHYellow!25,top=white] 
 
 \setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{author in head/foot}{series=\bfseries}
+\setbeamerfont{title in head/foot}{series=\bfseries}
+\setbeamerfont{date in head/foot}{series=\bfseries}
 \setbeamertemplate{caption}[numbered]
 \renewcommand{\figurename}{Fig.}
 

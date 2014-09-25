@@ -2,6 +2,7 @@ beamerthemeALOHA.sty
 ===
 
 ![slide-example](slide_example.jpg)
+![slide-example2](slide_example2.jpg)
 
 This is a beamer theme based on the color scheme [ALOHA][ALOHA].
 
