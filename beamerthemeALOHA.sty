@@ -14,7 +14,6 @@
 \progressbar@pbwd=\paperwidth
 \progressbar@pbht=0.4ex
 
-%\usecolortheme{whale}
 \setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
 \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
 \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
@@ -32,7 +31,6 @@
 \setbeamercolor*{separation line}{}
 \setbeamercolor*{fine separation line}{}
 
-%\usecolortheme{orchid}
 \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
 \setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
 \setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
@@ -42,15 +40,11 @@
 \setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
 
 
-%\useinnertheme{rounded}
 \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{items}[ball]
 \setbeamertemplate{sections/subsections in toc}[ball]
 \setbeamertemplate{part page}[default][colsep=-4bp,rounded=true,shadow=false]
 
-%\useoutertheme{infolines}
-% \setbeamercolor*{author in head/foot}{parent=palette tertiary}
-% \setbeamercolor*{title in head/foot}{parent=palette secondary}
 \setbeamercolor*{author in head/foot}{parent=palette secondary}
 \setbeamercolor*{title in head/foot}{parent=palette secondary}
 \setbeamercolor*{date in head/foot}{parent=palette secondary}
@@ -77,14 +71,6 @@
 
       \draw[fill=pbblue, draw=none] %
         (0pt, 0pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
-
-%     \draw[color=normal text.fg!50]  
-%       (0pt, 0pt) rectangle (\progressbar@pbwd, \progressbar@pbht) 
-%         node[pos=0.5,color=normal text.fg] {\textnormal{%
-%              \pgfmathparse{\insertframenumber*100/\inserttotalframenumber}%
-%              \pgfmathprintnumber[fixed,precision=2]{\pgfmathresult}\,\%%
-%         }%
-%     };
   \end{tikzpicture}%
 }
 
@@ -92,12 +78,6 @@
 {
   \leavevmode%
   \hbox{%
-%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-%     \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\beamer@ifempty\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
-%   \end{beamercolorbox}%
-%   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-%     \usebeamerfont{title in head/foot}\insertshorttitle
-%   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.666667\paperwidth,ht=2.25ex,dp=1ex,left]{title in head/foot}%
     \usebeamerfont{title in head/foot}\hspace*{2em}
     \ifx\insertsectionhead\empty\else
@@ -114,19 +94,6 @@
   \end{beamercolorbox}%
   \vskip0pt%
 }
-
-% \defbeamertemplate*{headline}{infolines theme}
-% {
-%   \leavevmode%
-%   \hbox{%
-%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
-%     \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
-%   \end{beamercolorbox}%
-%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
-%     \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
-%   \end{beamercolorbox}}%
-%   \vskip0pt%
-% }
 
 \defbeamertemplate*{title page}{title aloha}
 {
