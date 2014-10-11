@@ -54,6 +54,7 @@
 
 % the progress bar
 \definecolor{pbblue}{RGB}{109, 160, 189}% filling color for the progress bar
+\definecolor{pbblueblack}{RGB}{59, 85, 102}
 \definecolor{pbgray}{RGB}{200, 200, 200}% background color for the progress bar
 
 \def\progressbar@progressbar{%
@@ -69,8 +70,18 @@
     \draw[fill=pbgray, draw=none]
       (0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
 
-      \draw[fill=pbblue, draw=none] %
-        (0pt, 0pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
+        \clip (0pt, 0pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
+        \shade[left color=pbblueblack, right color=pbblue] %
+            (0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
+
+
+%     \draw[color=normal text.fg!50]  
+%       (0pt, 0pt) rectangle (\progressbar@pbwd, \progressbar@pbht) 
+%         node[pos=0.5,color=normal text.fg] {\textnormal{%
+%              \pgfmathparse{\insertframenumber*100/\inserttotalframenumber}%
+%              \pgfmathprintnumber[fixed,precision=2]{\pgfmathresult}\,\%%
+%         }%
+%     };
   \end{tikzpicture}%
 }
 
