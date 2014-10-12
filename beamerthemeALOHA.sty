@@ -54,7 +54,6 @@
 
 % the progress bar
 \definecolor{pbblue}{RGB}{109, 160, 189}% filling color for the progress bar
-\definecolor{pbblueblack}{RGB}{59, 85, 102}
 \definecolor{pbgray}{RGB}{200, 200, 200}% background color for the progress bar
 
 \def\progressbar@progressbar{%
@@ -71,7 +70,7 @@
       (0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
 
         \clip (0pt, 0pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
-        \shade[left color=pbblueblack, right color=pbblue] %
+        \shade[left color=pbblue, right color=ALHGreen] %
             (0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
 
 
