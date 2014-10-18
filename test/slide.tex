@@ -35,35 +35,13 @@
 \usepackage{txfonts}
 \usefonttheme{professionalfonts}
 
-%\setmainfont[Ligatures=TeX]{Helvetica Neue UltraLight}
-%\setsansfont[Ligatures=TeX]{Helvetica Neue UltraLight}
-\setmainfont[Ligatures=TeX,BoldFont=Helvetica Neue Bold,ItalicFont=Helvetica Neue UltraLight Italic]{Helvetica Neue Thin}
-\setsansfont[Ligatures=TeX,BoldFont=Helvetica Neue Bold,ItalicFont=Helvetica Neue UltraLight Italic]{Helvetica Neue Thin}
-\setmainjfont[BoldFont=Kozuka Gothic Pro M,ItalicFont=Helvetica Neue Thin Italic]{Kozuka Gothic Pro L}
-\setsansjfont{Kozuka Gothic Pro M}
-
-\def\HelvNeueUL{\fontspec{Helvetica Neue UltraLight}}
-\def\HelvNeueT{\fontspec{Helvetica Neue Thin}}
-\def\HelvNeueR{\fontspec{Helvetica Neue}}
-\def\HelvNeueB{\fontspec{Helvetica Neue Bold}}
-\def\kozgoM{\fontspec{Kozuka Gothic Pro M}}
-\def\kozgoR{\fontspec{Kozuka Gothic Pro R}}
-\def\kozgoL{\fontspec{Kozuka Gothic Pro L}}
-\def\kozgoEL{\fontspec{Kozuka Gothic Pro EL}}
-
-%definition of wingding marks
-\def\wingdsqr{{\fontspec{Wingdings Regular} p}}
-\def\wingdsqflr{{\fontspec{Wingdings Regular} v}}
-\def\wingdrarrow{{\fontspec{Wingdings 3} g}}
-\def\wingdrbarrow{{\fontspec{Wingdings 3} m}}
-
 \def\vector#1{\mbox{\boldmath $#1$}}
 
-\title[]{\HelvNeueB Test slide}
-\subtitle{\HelvNeueB test slide for beamerthemeALOHA.sty}
-\author[]{\HelvNeueT Rintaro Okamura}
-\institute[]{\HelvNeueT\footnotesize Tohoku University}
-\date[September 2014]{\HelvNeueT September 2014}
+\title[]{Test slide}
+\subtitle{test slide for beamerthemeALOHA.sty}
+\author[]{Rintaro Okamura}
+\institute[]{\footnotesize Tohoku University}
+\date[September 2014]{September 2014}
 \titlegraphic{\includegraphics[width=1.5cm]{icon.png}}
 
 \begin{document}
@@ -81,16 +59,16 @@
     \frametitle{\insertsectionnumber.\insertsubsectionnumber. \insertsubsectionhead}
 
     \begin{itemize}
-        \item[\Large \wingdrarrow] \large In this slide...
+        \item[\Large] \large In this slide...
             \begin{itemize}
                 \normalsize
-                \item[\wingdsqr] A
+                \item A
                 \begin{itemize}
                     \normalsize
-                    \item[\wingdsqflr] \textcolor{ALHPink}{B}
-                    \item[\wingdsqflr] \textcolor{ALHBlue}{C}
-                    \item[\wingdsqflr] D
-                    \item[\wingdsqflr] E
+                    \item \textcolor{ALHPink}{B}
+                    \item \textcolor{ALHBlue}{C}
+                    \item D
+                    \item E
                 \end{itemize}
             \end{itemize}
     \end{itemize}
@@ -126,12 +104,12 @@
 \begin{frame}
     \frametitle{\insertsectionnumber.\insertsubsectionnumber. \insertsubsectionhead}
     \begin{itemize}
-        \item[\wingdsqflr] \textcolor{ALHGreen}{ALHGreen}
-        \item[\wingdsqflr] \textcolor{ALHPink}{ALHPink}
-        \item[\wingdsqflr] \textcolor{ALHBlue}{ALHBlue}
-        \item[\wingdsqflr] \textcolor{ALHWhite}{ALHWhite}
-        \item[\wingdsqflr] \textcolor{ALHGray}{ALHGray}
-        \item[\wingdsqflr] \textcolor{ALHYellow}{ALHYellow}
+        \item \textcolor{ALHGreen}{ALHGreen}
+        \item \textcolor{ALHPink}{ALHPink}
+        \item \textcolor{ALHBlue}{ALHBlue}
+        \item \textcolor{ALHWhite}{ALHWhite}
+        \item \textcolor{ALHGray}{ALHGray}
+        \item \textcolor{ALHYellow}{ALHYellow}
     \end{itemize}
 
 \end{frame}
